@@ -1,3 +1,15 @@
+"""
+name: Non Zero XOR Search
+category: pe
+author: stefancicos
+icon: wxART_DISASM
+
+Searches for non-zero xor instructions and prints them to the console, while also adding a comment.
+
+https://github.com/stefancicos/malcat_scripts
+
+"""
+
 import malcat
 from malcat import Instruction
 
