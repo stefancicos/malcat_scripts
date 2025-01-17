@@ -16,8 +16,7 @@ from malcat import Instruction
 for fn in analysis.fns:
 	for basic_block in analysis.cfg[fn.start : fn.end]:
 		if basic_block.code:
-			for insn in analysis.asm[basic_block.start : basic_block.end]:
+			for insn in basic_block:
 				if insn.type == Instruction.Type.XOR:
-					address = hex(analysis.a2v(insn.address))
-					print(str(address)+" : "+str(insn))
+					gui.print(f"[rva]{insn.address:x}[/rva]: "+str(insn).replace("[","\[")+" ", format=True) # TODO: remove +" " after the bug is fixed
 					analysis.comments[insn.address] = "Non Zero XOR"
