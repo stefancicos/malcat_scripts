@@ -6,6 +6,8 @@ for i in analysis.vfiles:
 	if i.path == "1337/31337/unk":
 		rsc = i.open().read()
 		break
+	else:
+		raise ValueError("No rsrc named 31337 could be found")	
 k_len = rsc[0]
 key = rsc[4:4+k_len]
 data = rsc[4+k_len:]
