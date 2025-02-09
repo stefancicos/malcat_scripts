@@ -1,3 +1,11 @@
+"""
+name: Netwalker
+category: config extractors
+author: Stefan Cicos
+
+Decrypt config (unpacked) netwalker ransomware sample
+"""
+
 import malcat
 from transforms.stream import RC4
 malcat.setup()
